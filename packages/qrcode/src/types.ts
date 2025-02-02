@@ -27,7 +27,7 @@ export type StaticQrCodeParams = {
   /** Merchant City */
   merchantCity: string
   additionalData?: {
-    /** Transaction ID used to identify the payment */
+    /** Transaction ID used to identify the payment, defaults to *** */
     txId: string
   }
   /** Postal Code */
@@ -69,7 +69,7 @@ export type DynamicQrCodeParams = {
   /** Merchant City */
   merchantCity: string
   additionalData: {
-    /** Transaction ID used to identify the payment */
+    /** Transaction ID used to identify the payment, defaults to *** */
     txId: string
   }
   /** Postal Code */
@@ -89,6 +89,14 @@ export type GetPayloadParams = {
    * City code
    */
   codMun?: string
+}
+
+export type ParseOptions = {
+  /**
+   * If true, the qrcode will be validated and error will be thrown if it's invalid
+   * Defaults to true
+   */
+  validate?: boolean
 }
 
 export enum DynamicStatus {

@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@pix.js/core": "workspace:*",
+    "@pix.js/validator": "workspace:*",
     "qrcode": "^1.5.4"
   }
 }

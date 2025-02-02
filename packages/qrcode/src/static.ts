@@ -3,6 +3,11 @@ import { toDataURL } from 'qrcode'
 
 import { StaticQrCodeParams } from './types'
 
+/**
+ * Creates a static PIX QR code
+ * @param params The parameters for the static PIX QR code
+ * @returns The static PIX QR code object
+ */
 export const createStatic = (params: StaticQrCodeParams) => {
   const payloadWithDefaultValues = {
     merchantAccountInfo: {
@@ -17,7 +22,7 @@ export const createStatic = (params: StaticQrCodeParams) => {
     merchantName: params.merchantName ?? '',
     merchantCity: params.merchantCity ?? '',
     additionalData: {
-      txId: params.additionalData?.txId ?? '',
+      txId: params.additionalData?.txId ?? '***',
     },
     value: params.value,
     postalCode: params.postalCode ?? '',
