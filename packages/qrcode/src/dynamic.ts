@@ -37,7 +37,7 @@ export const createDynamic = (params: DynamicQrCodeParams) => {
 
   return {
     brcode,
-    toBase64: toDataURL(brcode),
+    toBase64: () => toDataURL(brcode),
     type: PixQrCodeType.Dynamic,
     getPayload: async (getPayloadParams?: GetPayloadParams) => {
       const url = new URL(`https://${params.merchantAccountInfo.url}`)
