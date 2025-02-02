@@ -1,0 +1,60 @@
+{
+  "name": "@pix.js/monorepo",
+  "version": "1.0.0",
+  "description": "A set of utilities for working with Pix",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "turbo run lint",
+    "ci": "turbo run ci",
+    "dev": "turbo run dev",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "format": "turbo run format",
+    "build": "turbo run build",
+    "new-version": "changeset",
+    "publish-packages": "turbo run build ci && yarn run test && changeset version && changeset publish"
+  },
+  "author": {
+    "name": "Victor Mesquita",
+    "email": "contato@victormesquita.dev"
+  },
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/victor-teles/pix.js#readme",
+  "bugs": "https://github.com/victor-teles/pix.js/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-teles/pix.js.git"
+  },
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "typescript",
+    "pix",
+    "pix.js",
+    "sdk"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.12.0",
+    "husky": "^9.1.7",
+    "tsup": "^8.3.6",
+    "turbo": "2.3.4",
+    "typescript": "^5.7.3",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.4",
+    "vitest-mock-extended": "^2.0.2",
+    "vitest-sonar-reporter": "^2.0.0"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.12"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "yarn@4.6.0"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "globalEnv": ["NODE_ENV"],
+  "envMode": "loose",
+  "tasks": {
+    "build": {
+      "env": ["NODE_ENV"],
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "release": {
+      "env": ["NODE_ENV"],
+      "dependsOn": ["^release"]
+    },
+    "test": {},
+    "lint": {},
+    "ci": {},
+    "format": {
+
+    },
+    "dev": {
+      "cache": false
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "@pix.js/core",
+  "version": "1.0.0",
+  "description": "Core functions for Pix.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --sourcemap",
+    "dev": "tsc --watch",
+    "format": "biome check --formatter-enabled=true  --linter-enabled=false --organize-imports-enabled=true --write .",
+    "lint": "biome check src --formatter-enabled=false --organize-imports-enabled=true --write .",
+    "ci": "biome ci"
+  },
+  "author": {
+    "name": "Victor Mesquita",
+    "email": "contato@victormesquita.dev"
+  },
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/victor-teles/pix.js#readme",
+  "bugs": "https://github.com/victor-teles/pix.js/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-teles/pix.js.git"
+  },
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "typescript",
+    "pix",
+    "pix.js",
+    "keys"
+  ],
+  "dependencies": {
+    "crc": "^4.3.2"
+  }
+}
