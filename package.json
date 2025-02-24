@@ -13,7 +13,7 @@
     "format": "turbo run format",
     "build": "turbo run build",
     "new-version": "changeset",
-    "publish-packages": "turbo run build ci && yarn run test && changeset version && changeset publish"
+    "publish-packages": "turbo run build ci && pnpm run test && changeset version && changeset publish"
   },
   "author": {
     "name": "Victor Mesquita",

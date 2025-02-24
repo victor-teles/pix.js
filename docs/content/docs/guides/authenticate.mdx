@@ -11,11 +11,10 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 Follow these three steps to get started with Sqala:
 
 <Steps>
-    <Step> 
+    <Step>
     ### Request your Credentials
     Get your credentials from the developer area in our portal. Access it through the user menu in the top left corner of our [dashboard](https://dashboard.sqala.tech) or directly via this [URL](https://developer.sqala.tech/apps/endpoints). Use your AppID as the username and AppSecret as the password when making API requests. 👇
 
-    ![Image](/images/guides/get-sqala-app-id.gif)
     </Step>
 
     <Step>
@@ -26,7 +25,7 @@ Follow these three steps to get started with Sqala:
     </Callout>
 
     <Tabs items={["JavaScript", "Python", "C#"]}>
-    
+
         ```javascript tab
         import fetch from 'node-fetch'
         import { encode } from 'base-64'
@@ -80,7 +79,7 @@ Follow these three steps to get started with Sqala:
         // [!code word:YOUR_REFRESH_TOKEN]
         using var client = new HttpClient();
         var request = new HttpRequestMessage(HttpMethod.Post, "https://api.sqala.tech/core/v1/access-tokens");
-        
+
         request.Headers.Add("Content-Type", "application/json");
         request.Headers.Add("Authorization", "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes($"{YOUR_APP_ID}:{YOUR_APP_SECRET}")));
 
