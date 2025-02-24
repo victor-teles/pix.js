@@ -1,4 +1,5 @@
 import { parseStaticPix, staticPixSchema } from '@pix.js/core'
+import { validateCrc } from './crc-validator'
 import { ValidateOptions } from './types'
 
 /**
@@ -16,5 +17,6 @@ export const validateStaticQrCode = (payload: string, options: ValidateOptions =
   }
 
   const parsed = staticPixSchema.safeParse(parseStaticPix(payload))
-  return parsed.success
+  const crcValid = validateCrc(payload)
+  return parsed.success && crcValid
 }

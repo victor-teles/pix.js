@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.dark {
+    .only-on-dark {
+        display: block;
+    }
+
+    .only-on-light {
+        display: none;
+    }
+}
+
+.light {
+    .only-on-dark {
+        display: none;
+    }
+
+    .only-on-light {
+        display: block;
+    }
+}

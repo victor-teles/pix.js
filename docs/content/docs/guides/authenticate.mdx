@@ -1,0 +1,126 @@
+---
+title: Authenticate
+description: Learn how to authenticate and create your first payment with Sqala
+---
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+<Callout type="warn">
+    Your credentials carry many privileges, so keep them secure! Never share your credential keys in publicly accessible areas such as GitHub, client-side code or similar locations.
+</Callout>
+
+Follow these three steps to get started with Sqala:
+
+<Steps>
+    <Step> 
+    ### Request your Credentials
+    Get your credentials from the developer area in our portal. Access it through the user menu in the top left corner of our [dashboard](https://dashboard.sqala.tech) or directly via this [URL](https://developer.sqala.tech/apps/endpoints). Use your AppID as the username and AppSecret as the password when making API requests. 👇
+
+    ![Image](/images/guides/get-sqala-app-id.gif)
+    </Step>
+
+    <Step>
+    ### Create an Access Token
+
+    <Callout>
+        All API requests must use HTTPS. Requests made over plain HTTP or without authentication will fail.
+    </Callout>
+
+    <Tabs items={["JavaScript", "Python", "C#"]}>
+    
+        ```javascript tab
+        import fetch from 'node-fetch'
+        import { encode } from 'base-64'
+
+        // [!code word:YOUR_APP_ID]
+        // [!code word:YOUR_APP_SECRET]
+        // [!code word:YOUR_REFRESH_TOKEN]
+        const response = await fetch('https://api.sqala.tech/core/v1/access-tokens', {
+            headers: {
+            'Authorization': 'Basic ' + encode('YOUR_APP_ID' + ':' + 'YOUR_APP_SECRET'),
+            'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify({
+                'refreshToken': 'YOUR_REFRESH_TOKEN'
+            })
+        })
+
+        const data = await response.json()
+
+        console.log(data)
+        ```
+
+        ```python tab
+        import requests
+        from base64 import b64encode
+
+        # [!code word:YOUR_APP_ID]
+        # [!code word:YOUR_APP_SECRET]
+        # [!code word:YOUR_REFRESH_TOKEN]
+        response = requests.post(
+            'https://api.sqala.tech/core/v1/access-tokens',
+            headers={
+                'Authorization': 'Basic ' + b64encode(
+                    f'YOUR_APP_ID:YOUR_APP_SECRET'.encode()
+                ).decode(),
+                'Content-Type': 'application/json'
+            },
+            json={
+                'refreshToken': 'YOUR_REFRESH_TOKEN'
+            }
+        )
+        ```
+
+        ```csharp tab
+        using System.Net.Http;
+        using System.Text;
+
+        // [!code word:YOUR_APP_ID]
+        // [!code word:YOUR_APP_SECRET]
+        // [!code word:YOUR_REFRESH_TOKEN]
+        using var client = new HttpClient();
+        var request = new HttpRequestMessage(HttpMethod.Post, "https://api.sqala.tech/core/v1/access-tokens");
+        
+        request.Headers.Add("Content-Type", "application/json");
+        request.Headers.Add("Authorization", "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes($"{YOUR_APP_ID}:{YOUR_APP_SECRET}")));
+
+        var content = new StringContent("{\"refreshToken\":\"" + YOUR_REFRESH_TOKEN + "\"}", Encoding.UTF8, "application/json");
+        request.Content = content;
+
+        var response = await client.SendAsync(request);
+        var result = await response.Content.ReadAsStringAsync();
+        ```
+    </Tabs>
+
+    **output**
+
+    ```json
+    {
+      "token": "eyJraWQiOiJwb1NPeDI0VHRmbDZCYjdaZ3RcL296WGpqUzMrTVlkYTNScXdON1dVSXJkbz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyZjE5MDk0Mi1jMjY5LTQxMjQtOTNkNy01YTdmYTkwMTQ0YzkiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuc2EtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3NhLWVhc3QtMV82eWdMcFJLMGUiLCJjbGllbnRfaWQiOiIyNXQwOGxwaHYwN2IzZnZqZ2FqcTNsczFrcCIsIm9yaWdpbl9qdGkiOiIzZWZjODY1Yi01MzU2LTQwNWMtOTQxYy1iNmExM2I3ODFhNWYiLCJldmVudF9pZCI6ImMyMTM1NjgzLWY3YTUtNGMxYy04MzUzLWM3MTUyNmQ2NDU5YyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NTQ4MTY3OTgsImV4cCI6MTY1NDgyMDUyNCwiaWF0IjoxNjU0ODE2OTI0LCJqdGkiOiI2ZmVhODZiNC1kNDVmLTRhOGQtYjEwYi1iOWRhNzkzODQyZmQiLCJ1c2VybmFtZSI6ImNhcmxvc3BlY2FuaGEyQG91dGxvb2suY29tIn0.PfKd8rpnq9xPO3IwSRkDuBDx0VjN41ABKvm0xIybNCxWh5N1b7HZsTPxjh6GiDoHWYnr8_HCzXqk0MQXYHt7ybHKIFPKqOaA4VpBrb-WaazwSAGdTJFt3grZb4KP-ab2gKaYMji9x1l_SDAaEU-frEHErOnJwyMPi1dn2pZAKJMp4p7IIctwYTFITokP4Lqn7amy_PHlsXoNlUPV0BoNBrFFq-sp22NXSdDtIsdSkyRlGqlOHNTd2zMNqqKCFx3lBt1dPfm6gPvx_mwlOiT0icAXwUOsXxi22P5HgEoh3HJw2NneP9xC8Mw1BQvhBdmfnmANQzIHWkFfBMCQo3xF5w",
+      "expiresIn": 3600,
+      "type": "Bearer"
+    }
+    ```
+    </Step>
+
+    <Step>
+    ### Create your first pix payment 💰
+
+    ```javascript
+    import fetch from 'node-fetch'
+
+    // [!code word:YOUR_ACCESS_TOKEN]
+    const response = await fetch('https://api.sqala.tech/core/v1/pix-qrcode-payments', {
+        headers: {
+        'Authorization': 'Bearer ' + 'YOUR_ACCESS_TOKEN',
+        'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+            amount: 990
+        })
+    })
+    ```
+    </Step>
+
+</Steps>

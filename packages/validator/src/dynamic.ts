@@ -1,4 +1,5 @@
 import { dynamicPixSchema, parseDynamicPix } from '@pix.js/core'
+import { validateCrc } from './crc-validator'
 import { ValidateOptions } from './types'
 
 /**
@@ -16,5 +17,6 @@ export const validateDynamicQrCode = (payload: string, options: ValidateOptions 
   }
 
   const parsed = dynamicPixSchema.safeParse(parseDynamicPix(payload))
-  return parsed.success
+  const crcValid = validateCrc(payload)
+  return parsed.success && crcValid
 }

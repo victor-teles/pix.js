@@ -1,7 +1,7 @@
 {
-  "name": "@pix.js/validator",
+  "name": "@pix.js/dict",
   "version": "1.0.0",
-  "description": "Validate Pix keys and QRCode",
+  "description": "Dict API sdk",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -42,11 +42,17 @@
     "typescript",
     "pix",
     "pix.js",
-    "validator"
+    "dict",
+    "dict api",
+    "dict sdk"
   ],
+  "engines": {
+    "node": ">=21"
+  },
   "dependencies": {
     "@pix.js/core": "workspace:*",
-    "crc": "^4.3.2",
-    "zod": "^3.24.1"
+    "change-case": "^5.4.4",
+    "fast-xml-parser": "^4.5.1",
+    "xml-crypto": "^6.0.0"
   }
 }
