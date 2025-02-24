@@ -47,6 +47,6 @@
   "dependencies": {
     "@pix.js/core": "workspace:*",
     "crc": "^4.3.2",
-    "zod": "^3.24.1"
+    "zod": "^3.24.2"
   }
 }

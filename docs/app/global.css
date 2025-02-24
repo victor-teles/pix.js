@@ -1,24 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+@source '../node_modules/fumadocs-ui/dist/**/*.js';
 
 
 .dark {
-    .only-on-dark {
-        display: block;
-    }
+  .only-on-dark {
+    display: block;
+  }
 
-    .only-on-light {
-        display: none;
-    }
+  .only-on-light {
+    display: none;
+  }
 }
 
 .light {
-    .only-on-dark {
-        display: none;
-    }
+  .only-on-dark {
+    display: none;
+  }
 
-    .only-on-light {
-        display: block;
-    }
+  .only-on-light {
+    display: block;
+  }
 }
