@@ -10,7 +10,7 @@
 </div>
 <br />
 
-<div align="center"><strong>Pix.js is a library for interacting with Pix and Dict API.</strong></div>
+<div align="center"><strong>Pix.js is a set of tools for interacting with Pix and Dict API.</strong></div>
 
 <br />
 
