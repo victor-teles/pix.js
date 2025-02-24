@@ -5,12 +5,12 @@
 
 <div align="center">
     <img src="https://badgen.net/npm/v/pix.js?" alt="NPM Version" />
-    <img src="https://github.com/victor-teles/pix.js/actions/workflows/tests.yaml/badge.svg" alt="Build Status" />
+    <img src="https://github.com/victor-teles/pix.js/actions/workflows/ci.yaml/badge.svg" alt="Build Status" />
 </a>
 </div>
 <br />
 
-<div align="center"><strong>A pix.js is a library for interacting with the Pix and Dict API.</strong></div>
+<div align="center"><strong>Pix.js is a library for interacting with Pix and Dict API.</strong></div>
 
 <br />
 
