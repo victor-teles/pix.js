@@ -1,0 +1,8 @@
+---
+description: Prefer American English spellings
+globs: *.md, *.mdx
+---
+- Use "color" instead of "colour".
+- Use "favor" instead of "favour".
+- Use "organize" instead of "organise".
+- Use "analyze" instead of "analyse".

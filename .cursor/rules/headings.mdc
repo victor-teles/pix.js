@@ -1,0 +1,8 @@
+---
+description: Consistent heading style and hierarchy
+globs: *.md, *.mdx
+---
+- Capitalize only the first letter of the first word in headings, unless it’s a proper noun (sentence case).
+- Use H1 (#) for the document title, H2 (##) for main sections, and H3 (###) for subsections—avoid deeper levels unless essential.
+- Keep headings concise (under 10 words) and descriptive of the content below.
+- Avoid stacking headings without intervening text (e.g., H2 followed immediately by H3).

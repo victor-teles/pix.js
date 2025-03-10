@@ -1,0 +1,8 @@
+---
+description: Consistent tone and voice for documentation
+globs: *.mdx, *.md
+---
+- Use a conversational yet professional tone—avoid overly formal or casual language.
+- Be positive and solution-oriented (e.g., "You can fix this by..." instead of "This won’t work unless...").
+- Avoid humor, idioms, or cultural references that may not translate well.
+- Use "must" for requirements, "should" for recommendations, and "can" for options.

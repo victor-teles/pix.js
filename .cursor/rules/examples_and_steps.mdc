@@ -1,0 +1,9 @@
+---
+description: Guidelines for examples and step-by-step instructions
+globs: *.mdx, *.md
+---
+- Provide at least one concrete example for every concept or feature explained.
+- Use numbered lists for sequential steps and bulleted lists for non-sequential items.
+- Start each step with an action verb (e.g., "Open the file" instead of "The file should be opened").
+- Keep steps concise—one action per step—and avoid combining multiple actions.
+- Include expected outcomes or screenshots after key steps where helpful.

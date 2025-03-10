@@ -1,0 +1,9 @@
+---
+description: Guidelines for document structure and readability
+globs: *.md, *.mdx
+---
+- Start with a brief introduction (1-2 sentences) stating the document’s purpose.
+- Order content from general to specific or from most to least important.
+- Use short paragraphs (3-5 sentences) to improve scannability.
+- Include a table of contents for documents longer than 1000 words.
+- Place critical information (e.g., prerequisites, warnings) at the top or in a clearly marked section.

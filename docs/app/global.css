@@ -1,10 +1,18 @@
 @import 'tailwindcss';
-@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/dusk.css';
 @import 'fumadocs-ui/css/preset.css';
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
 
 
+:root {
+  --color-fd-primary: hsl(187, 66%, 46%);
+  --color-fd-accent: hsl(187, 30%, 90%);
+}
+
 .dark {
+  --color-fd-primary: hsl(187, 42.5%, 64.5%);
+  --color-fd-accent: hsl(187, 20%, 15%);
+
   .only-on-dark {
     display: block;
   }

@@ -1,13 +1,13 @@
 import { PixQrCodeType, PointOfInitiationMethod, dynamicPixSchema, toDynamicPix } from '@pix.js/core'
 import { toDataURL } from 'qrcode'
-import { DynamicQrCodeParams, GetPayloadParams, InstantPayload, ScheduledPayload } from './types'
+import { DynamicQrCode, DynamicQrCodeParams, GetPayloadParams, InstantPayload, ScheduledPayload } from './types'
 
 /**
  * Creates a dynamic PIX QR code
  * @param params The parameters for the dynamic PIX QR code
  * @returns The dynamic PIX QR code object
  */
-export const createDynamic = (params: DynamicQrCodeParams) => {
+export const createDynamic = (params: DynamicQrCodeParams): DynamicQrCode => {
   const payloadWithDefaultValues = {
     merchantAccountInfo: {
       gui: params.merchantAccountInfo.gui ?? 'br.gov.bcb.pix',
@@ -38,6 +38,7 @@ export const createDynamic = (params: DynamicQrCodeParams) => {
   return {
     brcode,
     toBase64: () => toDataURL(brcode),
+    toDataUrl: () => toDataURL(brcode),
     type: PixQrCodeType.Dynamic,
     getPayload: async (getPayloadParams?: GetPayloadParams) => {
       const url = new URL(`https://${params.merchantAccountInfo.url}`)

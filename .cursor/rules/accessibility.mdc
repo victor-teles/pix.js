@@ -1,0 +1,9 @@
+---
+description: Guidelines for accessible and inclusive language
+globs: *.mdx, *.md
+---
+- Use simple, plain language—aim for a 7th-grade reading level where possible.
+- Avoid gender-specific terms (e.g., use "they" instead of "he/she").
+- Define acronyms and technical terms the first time they appear (e.g., "Application Programming Interface (API)").
+- Use descriptive link text (e.g., "Read the API guide" instead of "Click here").
+- Include alt text for images, starting with "Image of" and describing the content briefly.

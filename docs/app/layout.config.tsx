@@ -1,4 +1,4 @@
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
 /**
  * Shared layout configurations
@@ -8,24 +8,21 @@ import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
  * Docs Layout: app/docs/layout.tsx
  */
 
-
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        <span className="font-medium [.uwu_&]:hidden [header_&]:text-[15px]">
-          Sqala payments
-        </span>
+        <span className="font-medium [.uwu_&]:hidden [header_&]:text-[15px]">Pix.js</span>
       </>
     ),
     transparentMode: 'top',
   },
-  githubUrl: "https://github.com/victor-teles/sqala-docs",
+  githubUrl: 'https://github.com/victor-teles/pix.js',
   links: [
     {
-      text: "Documentation",
-      url: "/docs",
-      active: "nested-url",
+      text: 'Documentation',
+      url: '/docs',
+      active: 'nested-url',
     },
   ],
-};
+}

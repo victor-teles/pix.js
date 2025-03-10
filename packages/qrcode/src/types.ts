@@ -1,4 +1,4 @@
-import { PointOfInitiationMethod } from '@pix.js/core'
+import { PixKeyType, PixQrCodeType, PointOfInitiationMethod } from '@pix.js/core'
 
 export type StaticQrCodeParams = {
   merchantAccountInfo: {
@@ -58,18 +58,27 @@ export type DynamicQrCodeParams = {
    * Value of the payment
    */
   value?: number
-  /** Merchant Category Code defaults to 0000 */
+  /**
+   * Merchant Category Code
+   * @default 0000
+   */
   merchantCategoryCode?: string
-  /** Transaction Currency defaults to 986 */
+  /** Transaction Currency
+   * @default 986
+   */
   transactionCurrency?: string
-  /** Country Code defaults to BR */
+  /** Country Code defaults to BR
+   * @default BR
+   */
   countryCode?: string
   /** Merchant Name */
   merchantName: string
   /** Merchant City */
   merchantCity: string
   additionalData: {
-    /** Transaction ID used to identify the payment, defaults to *** */
+    /** Transaction ID used to identify the payment
+     * @default ***
+     */
     txId: string
   }
   /** Postal Code */
@@ -94,7 +103,7 @@ export type GetPayloadParams = {
 export type ParseOptions = {
   /**
    * If true, the qrcode will be validated and error will be thrown if it's invalid
-   * Defaults to true
+   * @default true
    */
   validate?: boolean
 }
@@ -169,4 +178,50 @@ export type InstantPayload = {
   readonly solicitacaoPagador?: string
   readonly infoAdicionais?: readonly InfoAdicional[]
   readonly status: DynamicStatus
+}
+
+export type DynamicQrCode = {
+  /**
+   * The QRCode as a base64 string
+   */
+  toBase64: () => Promise<string>
+  /**
+   * The QRCode as a data URL
+   */
+  toDataUrl: () => Promise<string>
+  /**
+   * The type of the QRCode
+   */
+  type: PixQrCodeType
+
+  /**
+   * The brcode of the QRCode
+   */
+  brcode: string
+  /**
+   * The payload of the QRCode
+   */
+  getPayload: () => Promise<{
+    payload: InstantPayload | ScheduledPayload
+    header: Record<string, unknown>
+  }>
+}
+
+export type StaticQrCode = {
+  /**
+   * The QRCode as a base64 string
+   */
+  toBase64: () => Promise<string>
+  /**
+   * The QRCode as a data URL
+   */
+  toDataUrl: () => Promise<string>
+  /**
+   * The type of the QRCode
+   */
+  type: PixQrCodeType
+  /**
+   * The key type of the QRCode
+   */
+  keyType: PixKeyType
 }

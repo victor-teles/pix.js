@@ -1,0 +1,10 @@
+---
+description: Standardize terminology across the project
+globs: *.mdx,*.md
+---
+- Replace "e.g." with "for example".
+- Replace "i.e." with "that is".
+- Address the reader directly using "you" instead of "we", "I", or "our".
+- Use "application" instead of "app" for clarity in formal docs.
+- Use "click" for mouse actions and "tap" for touch actions, not "select" unless choosing an option.
+- Avoid "etc."—list items explicitly or use "and similar items".

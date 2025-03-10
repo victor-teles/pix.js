@@ -1,0 +1,10 @@
+---
+description: General writing and style guidelines for documentation
+globs: *.mdx, *.md
+---
+- Keep sentences short, direct, and free of unnecessary jargon or buzzwords.
+- Use active voice, avoid ambiguity, and prioritize readability.
+- Limit sentences to one idea and keep them under 25 words where possible.
+- Use present tense for clarity and immediacy.
+- Avoid adverbs like "easily" or "quickly" unless they add specific value.
+- For lists, use parallel structure and end each item with consistent punctuation (e.g., periods if full sentences, no punctuation if fragments).

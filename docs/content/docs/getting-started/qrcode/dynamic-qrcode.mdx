@@ -1,0 +1,112 @@
+---
+title: Dynamic QRCode
+description: Dynamic QR codes enable single-use or recurring payments by generating unique urls that can be used to process the payment.
+---
+
+## Create a dynamic QRCode
+
+For generating a dynamic QRCode, you can use the `createDynamic` function:
+
+```ts
+import { createDynamic } from "@pix.js/qrcode";
+
+const dynamic = createDynamic({
+  merchantAccountInfo: {
+    url: 'qrcode.pix.celcoin.com.br/pixqrcode/v2/46403cb5cf73b90a34b05467632f9a',
+  },
+  merchantName: 'My user name',
+  merchantCity: 'My city',
+  additionalData: { txId: '1234567890' },
+});
+
+console.log(dynamic.brcode)
+// >00020101021226910014br.gov.bcb.pix2569qrcode.pix.celcoin.com.br/pixqrcode/v2/46403cb5cf73b90a34b05467632f9a52070503***63042C75
+```
+
+### Parameters
+<AutoTypeTable path="./lib/pix-qrcode-types.ts" name="DynamicQrCodeParams" />
+
+
+### Dynamic QRCode methods
+
+<AutoTypeTable path="./lib/pix-qrcode-types.ts" name="DynamicQrCode" />
+
+## Parse PIX QRCode data from a string
+
+To parse a PIX QRCode from a string, you can use the `parseFromString` function:
+
+```ts
+import { parseFromString } from "@pix.js/qrcode";
+
+const dynamicPayload = parseFromString(
+  '00020101021226910014br.gov.bcb.pix2569qrcode.pix.celcoin.com.br/pixqrcode/v2/9ba4b415d68448028544e96ddcfb225204000053039865802BR5915Victor Mesquita6009Sao Paulo62070503***63042C75',
+);
+
+console.log(dynamic)
+// ->
+// {
+//   merchantAccountInfo: {
+//     gui: 'br.gov.bcb.pix',
+//     url: 'qrcode.pix.celcoin.com.br/pixqrcode/v2/9ba4b415d68448028544e96ddcfb22',
+//   },
+//   pointOfInitiationMethod: 12,
+//   merchantCategoryCode: '0000',
+//   transactionCurrency: '986',
+//   countryCode: 'BR',
+//   merchantName: 'Victor Mesquita',
+//   merchantCity: 'Sao Paulo',
+//   additionalData: {
+//     txId: '***',
+//   },
+// }
+```
+
+You can also parse and create a dynamic QRCode object from a string:
+
+```ts
+const dynamic = createDynamic(parseFromString(
+  '00020101021226910014br.gov.bcb.pix2569qrcode.pix.celcoin.com.br/pixqrcode/v2/9ba4b415d68448028544e96ddcfb225204000053039865802BR5915Victor Mesquita6009Sao Paulo62070503***63042C75',
+));
+
+console.log(await dynamic.getPayload())
+// ->
+// {
+//   payload: {
+//     ...
+//   },
+//   header: {
+//     ...
+//   },
+// }
+```
+
+## Create a QRCode image
+
+To create a QRCode image, you can use the `toDataUrl` method:
+
+```ts
+import { createDynamic } from "@pix.js/qrcode";
+
+const dynamic = createDynamic({
+  merchantAccountInfo: {
+    url: 'qrcode.pix.celcoin.com.br/pixqrcode/v2/46403cb5cf73b90a34b05467632f9a',
+  },
+  merchantName: 'My user name',
+  merchantCity: 'My city',
+  additionalData: { txId: '1234567890' },
+});
+
+const dataUrl = await dynamic.toDataUrl();
+console.log(dataUrl)
+// >data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=
+```
+
+## Verify wheather a string is a dynamic QRCode
+
+Use the `isDynamicPix` function to verify whether a string is a dynamic QRCode:
+
+```ts
+import { isDynamicPix } from "@pix.js/qrcode";
+
+console.log(isDynamicPix('00020101021226910014br.gov.bcb.pix2569qrcode.pix.celcoin.com.br/pixqrcode/v2/9ba4b415d68448028544e96ddcfb225204000053039865802BR5919SqalaPay Pagamentos6007Barueri62070503***630469E8'))
+// >true
