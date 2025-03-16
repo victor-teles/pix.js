@@ -1,0 +1,7 @@
+{
+  "title": "Dict API",
+  "description": "Typescript SDK for Dict API",
+  "icon": "Terminal",
+  "root": true,
+  "pages": ["index"]
+}
