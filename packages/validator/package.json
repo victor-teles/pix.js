@@ -1,6 +1,6 @@
 {
   "name": "@pix.js/validator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Validate Pix keys and QRCode",
   "type": "module",
   "main": "./dist/index.cjs",

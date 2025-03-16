@@ -1,6 +1,6 @@
 {
   "name": "@pix.js/qrcode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A set of utilities for working with Pix QRCode",
   "type": "module",
   "main": "./dist/index.cjs",
