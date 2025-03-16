@@ -1,5 +1,5 @@
 import { PixQrCodeType, isStaticPix, parseDynamicPix, parseStaticPix } from '@pix.js/core'
-import { validateDynamicQrCode, validateStaticQrCode } from '@pix.js/validator'
+import { isValidDynamicQrCode, isValidStaticQrCode } from '@pix.js/validator'
 import { ParseOptions } from './types'
 
 /**
@@ -13,7 +13,7 @@ export const parseFromString = (qrcode: string, options: ParseOptions = { valida
   if (isStaticPix(qrcode)) {
     const parsed = parseStaticPix(qrcode)
     if (options.validate) {
-      validateStaticQrCode(qrcode, { throwError: true })
+      isValidStaticQrCode(qrcode, { throwError: true })
     }
 
     return {
@@ -23,7 +23,7 @@ export const parseFromString = (qrcode: string, options: ParseOptions = { valida
   }
 
   if (options.validate) {
-    validateDynamicQrCode(qrcode, { throwError: true })
+    isValidDynamicQrCode(qrcode, { throwError: true })
   }
 
   return {

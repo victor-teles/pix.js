@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
-import { validatePixKey } from './keys'
+import { isPixKey } from './keys'
 
-describe('validatePixKey', () => {
+describe('isPixKey', () => {
   test.each([
     // CPFs
     ['12345689290', false],
@@ -50,6 +50,6 @@ describe('validatePixKey', () => {
     ['fernandesjoao20524@xn--gamicom-whb', false],
     ['+554996749052', false],
   ])('keys validations %s', (cpf, expected) => {
-    expect(validatePixKey(cpf)).toBe(expected)
+    expect(isPixKey(cpf)).toBe(expected)
   })
 })

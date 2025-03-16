@@ -3,18 +3,55 @@ title: Validate a PIX key
 description: Learn how to validate a PIX key
 ---
 
-## Validate a PIX key
+## `isPixKey` function
 
-To validate a PIX key, you can use the `validatePixKey` function.
+To validate a PIX key, you can use the `isPixKey` function.
 
 ```ts
-import { validatePixKey } from "@pix.js/validator";
+import { isPixKey } from "@pix.js/validator";
 
-const isValid = validatePixKey("1234567890");
+const isValid = isPixKey("1234567890");
+// isValid will be false
+
+const isValid = isPixKey("+5521979590403");
+// isValid will be true
 ```
 
-To install the Validator package, you can use your favorite package manager:
+## `getPixKeyType` function
 
-```bash
-npm install @pix.js/validator
+### Detect phone key
+
+```ts
+import { getPixKeyType } from "@pix.js/validator";
+const keyType = getPixKeyType("+5521979590403");
+// keyType will be "PHONE"
 ```
+
+### Detect email key
+
+```ts
+const keyType = getPixKeyType("teste@teste.com");
+// keyType will be "EMAIL"
+```
+
+### Detect CPF key
+
+```ts
+const keyType = getPixKeyType("38485064089");
+// keyType will be "CPF"
+```
+
+### Detect CNPJ key
+
+```ts
+const keyType = getPixKeyType("12072243000114");
+// keyType will be "CNPJ"
+```
+
+### Detect random key
+
+```ts
+const keyType = getPixKeyType("4d077230-1673-42d6-abed-d698dd0ac55f");
+// keyType will be "RANDOM"
+```
+

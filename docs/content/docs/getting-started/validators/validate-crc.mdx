@@ -1,0 +1,15 @@
+---
+title: Validate CRC
+description: Learn how to validate the CRC of a PIX QR code payload
+---
+
+## `isValidCrc` function
+
+You can also validate the CRC of a PIX QR code payload.
+
+```ts
+import { isValidCrc } from "@pix.js/validator";
+
+const isValid = isValidCrc("00020101021226870014br.gov.bcb.pix0114000000000000000002000000000000005204000053039865802BR5913PIX.JS6009SAO PAULO610805409000620705000000000000006304");
+// isValid will be true
+```

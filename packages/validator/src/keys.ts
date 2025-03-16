@@ -5,7 +5,7 @@ import { keyDetector } from '@pix.js/core'
  * @param key The key to validate
  * @returns True if the key is valid, false otherwise
  */
-export function validatePixKey(key: string): boolean {
+export function isPixKey(key: string): boolean {
   return (
     keyDetector.isCPF(key) ||
     keyDetector.isCNPJ(key) ||
