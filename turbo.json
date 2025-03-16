@@ -6,7 +6,7 @@
     "build": {
       "env": ["NODE_ENV"],
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**", ".next/**"]
     },
     "release": {
       "env": ["NODE_ENV"],
