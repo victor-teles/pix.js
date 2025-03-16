@@ -16,20 +16,26 @@ description: What is Pix.js and how to use it in your project
 ## What is Pix.js?
 
 Pix.js is a set of tools for integrating PIX payments into your JavaScript/TypeScript projects.
+It has different packages:
 
-### Key Features
+<Cards>
 
-- **QRCode Generation & Validation**: Create and validate both static and dynamic PIX QR codes
-- **Image Generation**: Generate QR code images in various formats
-- **Validation**: Validate PIX keys, CRC checksums, and other PIX-related data
-- **DICT API SDK**: Work with Brazil's DICT (Diretório de identificadores de contas transacionais) API through our SDK *(⚠️ in development)*
+<Card icon={<CpuIcon className="text-purple-300" />} title='@pix.js/core'>
+Core logic and components for PIX validations and QR code generation.
+</Card>
 
-## Available Packages
+<Card icon={<QrCodeIcon className="text-purple-300" />} title='@pix.js/qrcode' href='/docs/getting-started/qrcode'>
+QR code factory and parser for both static and dynamic PIX QR codes.
+</Card>
 
-Pix.js is modular by design, offering specialized packages for different needs:
+<Card icon={<CheckCheckIcon className="text-purple-300" />} title='@pix.js/validator' href='/docs/getting-started/validators'>
+Validator for PIX keys, CRC checksums, and other PIX-related data.
+</Card>
 
-- `@pix.js/qrcode`: Create and validate both static and dynamic PIX QR codes
-- `@pix.js/validator`: Validate PIX keys, CRC checksums, and other PIX-related data
-- `@pix.js/dict`: The SDK for DICT API
+<Card icon={<BookAIcon className="text-purple-300" />} title='@pix.js/dict' href='/docs/getting-started/dict'>
+DICT API SDK for working with Brazil's DICT (Diretório de identificadores de contas transacionais) API.
+</Card>
 
-You can find more information about each package in their respective section in the sidebar.
+</Cards>
+
+

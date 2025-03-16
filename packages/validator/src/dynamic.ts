@@ -1,5 +1,5 @@
 import { dynamicPixSchema, parseDynamicPix } from '@pix.js/core'
-import { validateCrc } from './crc-validator'
+import { isValidCrc } from './crc-validator'
 import { ValidateOptions } from './types'
 
 /**
@@ -10,13 +10,13 @@ import { ValidateOptions } from './types'
  * @returns True if the payload is valid, false otherwise
  * @throws {Error} If validation fails and throwError is true
  */
-export const validateDynamicQrCode = (payload: string, options: ValidateOptions = { throwError: false }): boolean => {
+export const isValidDynamicQrCode = (payload: string, options: ValidateOptions = { throwError: false }): boolean => {
   if (options.throwError) {
     const parsed = dynamicPixSchema.parse(parseDynamicPix(payload))
     return !!parsed
   }
 
   const parsed = dynamicPixSchema.safeParse(parseDynamicPix(payload))
-  const crcValid = validateCrc(payload)
+  const crcValid = isValidCrc(payload)
   return parsed.success && crcValid
 }

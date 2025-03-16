@@ -1,5 +1,5 @@
 import { parseStaticPix, staticPixSchema } from '@pix.js/core'
-import { validateCrc } from './crc-validator'
+import { isValidCrc } from './crc-validator'
 import { ValidateOptions } from './types'
 
 /**
@@ -10,13 +10,13 @@ import { ValidateOptions } from './types'
  * @returns True if the payload is valid, false otherwise
  * @throws {Error} If validation fails and throwError is true
  */
-export const validateStaticQrCode = (payload: string, options: ValidateOptions = { throwError: false }): boolean => {
+export const isValidStaticQrCode = (payload: string, options: ValidateOptions = { throwError: false }): boolean => {
   if (options.throwError) {
     const parsed = staticPixSchema.parse(parseStaticPix(payload))
     return !!parsed
   }
 
   const parsed = staticPixSchema.safeParse(parseStaticPix(payload))
-  const crcValid = validateCrc(payload)
+  const crcValid = isValidCrc(payload)
   return parsed.success && crcValid
 }

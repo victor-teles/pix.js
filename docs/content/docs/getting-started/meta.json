@@ -13,6 +13,8 @@
     "---Validators---",
     "validators/index",
     "validators/validate-pix-key",
+    "validators/validate-qrcode",
+    "validators/validate-crc",
     "---DICT SDK---",
     "dict/index"
   ]

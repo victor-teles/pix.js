@@ -5,7 +5,7 @@ import { crc16ccitt } from 'crc'
  * @param qrcode - The PIX QR code to validate
  * @returns True if the CRC is valid, false otherwise
  */
-export const validateCrc = (qrcode: string): boolean => {
+export const isValidCrc = (qrcode: string): boolean => {
   const payload = qrcode.slice(0, -4)
   const crc = qrcode.slice(-4)
 
