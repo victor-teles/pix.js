@@ -35,6 +35,10 @@
     "type": "git",
     "url": "git+https://github.com/victor-teles/pix.js.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "files": [
     "/dist"
   ],
