@@ -1,0 +1,16 @@
+# Pix.js sdk
+
+Pix.js is a set of tools for integrating PIX payments into your JavaScript/TypeScript projects
+
+## Pix Qrcode
+
+- [Installation](https://pix-js.vercel.app/docs/getting-started/qrcode): Install guide for pix qrcode parser and factory
+- [Dynamic QRCode](https://pix-js.vercel.app/docs/getting-started/qrcode/dynamic-qrcode)
+- [Static QRCode](https://pix-js.vercel.app/docs/getting-started/qrcode/static-qrcode)
+
+## Pix Validators
+
+- [Installation](https://pix-js.vercel.app/docs/getting-started/validators): Install guide for validators
+- [Validate a PIX key](https://pix-js.vercel.app/docs/getting-started/validators/validate-pix-key)
+- [Validate QR Code](https://pix-js.vercel.app/docs/getting-started/validators/validate-qrcode)
+- [Validate CRC](https://pix-js.vercel.app/docs/getting-started/validators/validate-crc)
