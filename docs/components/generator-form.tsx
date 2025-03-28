@@ -181,7 +181,7 @@ export function GeneratorForm() {
               <img
                 src={qrCode}
                 alt="QR Code"
-                className="w-full max-w-[400px] h-auto aspect-square"
+                className="w-full max-w-[400px] h-auto aspect-square dark:invert"
                 onClick={copyPayload}
               />
             </TooltipTrigger>
