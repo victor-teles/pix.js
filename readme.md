@@ -36,4 +36,4 @@ npm install @pix.js/dict
 
 ## Documentation
 
-Visit https://pix-js.vercel.app to view the documentation.
+Visit https://pix-js.vercel.app/en to view the documentation.

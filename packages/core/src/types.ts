@@ -15,11 +15,6 @@ export enum PixQrCodeType {
   Dynamic = 'DYNAMIC',
 }
 
-// export type ParsedQrCode = {
-//   type: PixQrCodeType
-//   payload: DynamicPixPayload | StaticPixPayload
-// }
-
 export class ParserError extends Error {
   constructor(message: string) {
     super(message)

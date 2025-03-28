@@ -25,7 +25,7 @@ export const createStatic = (params: StaticQrCodeParams) => {
       txId: params.additionalData?.txId ?? '***',
     },
     value: params.value,
-    postalCode: params.postalCode ?? '',
+    postalCode: params.postalCode ?? null,
     unreservedTemplate: {
       gui: params.unreservedTemplate?.gui,
       url: params.unreservedTemplate?.url,
@@ -37,7 +37,8 @@ export const createStatic = (params: StaticQrCodeParams) => {
 
   return {
     brcode,
-    toBase64: toDataURL(brcode),
+    toBase64: () => toDataURL(brcode),
+    toDataUrl: () => toDataURL(brcode),
     type: PixQrCodeType.Static,
     keyType: getPixKeyType(params.merchantAccountInfo.key),
   }

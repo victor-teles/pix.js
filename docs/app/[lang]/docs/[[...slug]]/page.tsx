@@ -4,10 +4,10 @@ import { notFound } from 'next/navigation'
 import { mdxComponents } from '../mdx-components'
 
 export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>
+  params: Promise<{ lang: string; slug?: string[] }>
 }) {
-  const params = await props.params
-  const page = source.getPage(params.slug)
+  const { slug, lang } = await props.params
+  const page = source.getPage(slug, lang)
   if (!page) notFound()
 
   // biome-ignore lint/style/useNamingConvention: <explanation>
@@ -29,10 +29,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>
+  params: Promise<{ lang: string; slug?: string[] }>
 }) {
-  const params = await props.params
-  const page = source.getPage(params.slug)
+  const { slug, lang } = await props.params
+  const page = source.getPage(slug, lang)
   if (!page) notFound()
 
   return {

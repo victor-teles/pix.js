@@ -1,22 +1,20 @@
 ---
-title: Static QRCode
-description: Static QR codes are fixed, reusable codes that enable payments to be sent to a specific PIX key.
+title: QRCode Estático
+description: QR codes estáticos são códigos fixos e reutilizáveis que permitem o envio de pagamentos para uma chave PIX específica.
 ---
 
+## Criar um QRCode estático
 
-## Create a static QRCode
-
-To create a static QRCode, you can use the `createStatic` function.
+Para criar um QRCode estático, você pode usar a função `createStatic`.
 
 ```ts
 import { createStatic } from "@pix.js/qrcode";
-
 
 const static = createStatic({
   merchantCity: 'Sao Paulo',
   merchantName: 'Victor Mesquita',
   merchantAccountInfo: {
-    key: '1234567890', // PIX key used to receive the payment
+    key: '1234567890', // Chave PIX usada para receber o pagamento
   },
 })
 
@@ -24,17 +22,16 @@ console.log(static.brcode)
 // >00020126420014br.gov.bcb.pix0111070598133900205teste52040000530398654041.005802BR5915Victor Mesquita6009Sao Paulo62140510123456789063049CE5
 ```
 
-### Parameters
+### Parâmetros
 <AutoTypeTable path="./lib/pix-qrcode-types.ts" name="StaticQrCodeParams" />
 
-
-### Static QRCode methods
+### Métodos do QRCode estático
 
 <AutoTypeTable path="./lib/pix-qrcode-types.ts" name="StaticQrCode" />
 
-## Create a QRCode image
+## Criar uma imagem QRCode
 
-To create a QRCode image, you can use the `toDataUrl` method:
+Para criar uma imagem QRCode, você pode usar o método `toDataUrl`:
 
 ```ts
 import { createStatic } from "@pix.js/qrcode";
@@ -43,7 +40,7 @@ const static = createStatic({
   merchantCity: 'Sao Paulo',
   merchantName: 'Victor Mesquita',
   merchantAccountInfo: {
-    key: '1234567890', // PIX key used to receive the payment
+    key: '1234567890', // Chave PIX usada para receber o pagamento
   },
 });
 
@@ -52,12 +49,13 @@ console.log(dataUrl)
 // >data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=
 ```
 
-## Verify wheather a string is a static QRCode
+## Verificar se uma string é um QRCode estático
 
-Use the `isStaticPix` function to verify whether a string is a static QRCode:
+Use a função `isStaticPix` para verificar se uma string é um QRCode estático:
 
 ```ts
 import { isStaticPix } from "@pix.js/qrcode";
 
 console.log(isStaticPix('00020126420014br.gov.bcb.pix0111070598133900205teste52040000530398654041.005802BR5915Victor Mesquita6009Sao Paulo62140510123456789063049CE55'))
 // >true
+```

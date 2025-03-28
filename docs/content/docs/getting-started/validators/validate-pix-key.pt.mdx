@@ -1,0 +1,56 @@
+---
+title: Validar uma chave PIX
+description: Aprenda como validar uma chave PIX
+---
+
+## Função `isPixKey`
+
+Para validar uma chave PIX, você pode usar a função `isPixKey`.
+
+```ts
+import { isPixKey } from "@pix.js/validator";
+
+const isValid = isPixKey("1234567890");
+// isValid será false
+
+const isValid = isPixKey("+5521979590403");
+// isValid será true
+```
+
+## Função `getPixKeyType`
+
+### Detectar chave de telefone
+
+```ts
+import { getPixKeyType } from "@pix.js/validator";
+const keyType = getPixKeyType("+5521979590403");
+// keyType será "PHONE"
+```
+
+### Detectar chave de e-mail
+
+```ts
+const keyType = getPixKeyType("teste@teste.com");
+// keyType será "EMAIL"
+```
+
+### Detectar chave CPF
+
+```ts
+const keyType = getPixKeyType("38485064089");
+// keyType será "CPF"
+```
+
+### Detectar chave CNPJ
+
+```ts
+const keyType = getPixKeyType("12072243000114");
+// keyType será "CNPJ"
+```
+
+### Detectar chave aleatória
+
+```ts
+const keyType = getPixKeyType("4d077230-1673-42d6-abed-d698dd0ac55f");
+// keyType será "RANDOM"
+```

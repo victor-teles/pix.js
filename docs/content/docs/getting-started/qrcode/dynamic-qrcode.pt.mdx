@@ -1,11 +1,11 @@
 ---
-title: Dynamic QRCode
-description: Dynamic QR codes enable single-use or recurring payments by generating unique urls that can be used to process the payment.
+title: QRCode Dinâmico
+description: QR codes dinâmicos permitem pagamentos únicos ou recorrentes gerando URLs únicas que podem ser usadas para processar o pagamento.
 ---
 
-## Create a dynamic QRCode
+## Criar um QRCode dinâmico
 
-For generating a dynamic QRCode, you can use the `createDynamic` function:
+Para gerar um QRCode dinâmico, você pode usar a função `createDynamic`:
 
 ```ts
 import { createDynamic } from "@pix.js/qrcode";
@@ -14,8 +14,8 @@ const dynamic = createDynamic({
   merchantAccountInfo: {
     url: 'qrcode.pix.celcoin.com.br/pixqrcode/v2/46403cb5cf73b90a34b05467632f9a',
   },
-  merchantName: 'My user name',
-  merchantCity: 'My city',
+  merchantName: 'Meu nome de usuário',
+  merchantCity: 'Minha cidade',
   additionalData: { txId: '1234567890' },
 });
 
@@ -23,17 +23,16 @@ console.log(dynamic.brcode)
 // >00020101021226910014br.gov.bcb.pix2569qrcode.pix.celcoin.com.br/pixqrcode/v2/46403cb5cf73b90a34b05467632f9a52070503***63042C75
 ```
 
-### Parameters
+### Parâmetros
 <AutoTypeTable path="./lib/pix-qrcode-types.ts" name="DynamicQrCodeParams" />
 
-
-### Dynamic QRCode methods
+### Métodos do QRCode dinâmico
 
 <AutoTypeTable path="./lib/pix-qrcode-types.ts" name="DynamicQrCode" />
 
-## Parse PIX QRCode data from a string
+## Analisar dados do QRCode PIX a partir de uma string
 
-To parse a PIX QRCode from a string, you can use the `parseFromString` function:
+Para analisar um QRCode PIX a partir de uma string, você pode usar a função `parseFromString`:
 
 ```ts
 import { parseFromString } from "@pix.js/qrcode";
@@ -61,7 +60,7 @@ console.log(dynamic)
 // }
 ```
 
-You can also parse and create a dynamic QRCode object from a string:
+Você também pode analisar e criar um objeto QRCode dinâmico a partir de uma string:
 
 ```ts
 const dynamic = createDynamic(parseFromString(
@@ -80,9 +79,9 @@ console.log(await dynamic.getPayload())
 // }
 ```
 
-## Create a QRCode image
+## Criar uma imagem QRCode
 
-To create a QRCode image, you can use the `toDataUrl` method:
+Para criar uma imagem QRCode, você pode usar o método `toDataUrl`:
 
 ```ts
 import { createDynamic } from "@pix.js/qrcode";
@@ -91,8 +90,8 @@ const dynamic = createDynamic({
   merchantAccountInfo: {
     url: 'qrcode.pix.celcoin.com.br/pixqrcode/v2/46403cb5cf73b90a34b05467632f9a',
   },
-  merchantName: 'My user name',
-  merchantCity: 'My city',
+  merchantName: 'Meu nome de usuário',
+  merchantCity: 'Minha cidade',
   additionalData: { txId: '1234567890' },
 });
 
@@ -101,12 +100,13 @@ console.log(dataUrl)
 // >data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=
 ```
 
-## Verify wheather a string is a dynamic QRCode
+## Verificar se uma string é um QRCode dinâmico
 
-Use the `isDynamicPix` function to verify whether a string is a dynamic QRCode:
+Use a função `isDynamicPix` para verificar se uma string é um QRCode dinâmico:
 
 ```ts
 import { isDynamicPix } from "@pix.js/qrcode";
 
 console.log(isDynamicPix('00020101021226910014br.gov.bcb.pix2569qrcode.pix.celcoin.com.br/pixqrcode/v2/9ba4b415d68448028544e96ddcfb225204000053039865802BR5919SqalaPay Pagamentos6007Barueri62070503***630469E8'))
 // >true
+```

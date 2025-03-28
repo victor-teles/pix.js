@@ -31,6 +31,9 @@
         },
         "useImportType": "off"
       },
+      "correctness": {
+        "noChildrenProp": "off"
+      },
       "suspicious": {
         "noImplicitAnyLet": "off",
         "noConfusingVoidType": "off"

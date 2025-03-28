@@ -22,7 +22,7 @@ export const toDynamicPix = (payload: DynamicPixPayload) => {
       ['59', formatText(payload.merchantName, 25)],
       ['60', formatText(payload.merchantCity, 15)],
       ['61', payload.postalCode ?? ''],
-      ['62', appendToBrCode('05', payload.additionalData.txId)],
+      ['62', appendToBrCode('05', payload.additionalData.txId ?? '')],
       payload.unreservedTemplate
         ? [
             '80',

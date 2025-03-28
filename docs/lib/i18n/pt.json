@@ -1,0 +1,24 @@
+{
+  "common": {
+    "title": "Documentação do Pix.js",
+    "description": "Documentação da biblioteca Pix.js",
+    "navigation": {
+      "home": "Início",
+      "docs": "Documentação",
+      "api": "Referência da API",
+      "examples": "Exemplos"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Crie QR Codes Pix com JavaScript",
+      "description": "Uma biblioteca poderosa para gerar e gerenciar QR codes Pix em aplicações JavaScript"
+    },
+    "features": {
+      "title": "Funcionalidades",
+      "static": "QR Codes Estáticos",
+      "dynamic": "QR Codes Dinâmicos",
+      "validation": "Validação Integrada"
+    }
+  }
+}

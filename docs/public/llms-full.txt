@@ -1,0 +1,27 @@
+# Pix.js sdk
+
+Pix.js is a set of tools for integrating PIX payments into your JavaScript/TypeScript projects
+
+## Pix Qrcode
+
+### Installation
+Source: https://pix-js.vercel.app/docs/getting-started/qrcode
+Description: Learn how to install the QRCode package and use it to generate, validate and parse pix qrcodes
+
+To install the QRCode package, you can use your favorite package manager:
+
+```bash tab="npm"
+npm install @pix.js/qrcode
+```
+
+```bash tab="pnpm"
+pnpm add @pix.js/qrcode
+```
+
+```bash tab="yarn"
+yarn add @pix.js/qrcode
+```
+
+```bash tab="bun"
+bun add @pix.js/qrcode
+```

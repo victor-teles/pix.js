@@ -1,0 +1,24 @@
+{
+  "common": {
+    "title": "Pix.js Documentation",
+    "description": "Documentation for the Pix.js library",
+    "navigation": {
+      "home": "Home",
+      "docs": "Documentation",
+      "api": "API Reference",
+      "examples": "Examples"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Build Pix QR Codes with JavaScript",
+      "description": "A powerful library for generating and managing Pix QR codes in JavaScript applications"
+    },
+    "features": {
+      "title": "Features",
+      "static": "Static QR Codes",
+      "dynamic": "Dynamic QR Codes",
+      "validation": "Built-in Validation"
+    }
+  }
+}

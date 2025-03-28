@@ -1,0 +1,21 @@
+{
+  "title": "Introdução",
+  "description": "Como começar com Pix.js",
+  "icon": "BookHeart",
+  "root": true,
+  "pages": [
+    "---Introdução---",
+    "index",
+    "---QRCode---",
+    "qrcode/index",
+    "qrcode/dynamic-qrcode",
+    "qrcode/static-qrcode",
+    "---Validadores---",
+    "validators/index",
+    "validators/validate-pix-key",
+    "validators/validate-qrcode",
+    "validators/validate-crc",
+    "---DICT SDK---",
+    "dict/index"
+  ]
+}

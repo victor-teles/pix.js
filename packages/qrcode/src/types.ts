@@ -28,7 +28,7 @@ export type StaticQrCodeParams = {
   merchantCity: string
   additionalData?: {
     /** Transaction ID used to identify the payment, defaults to *** */
-    txId: string
+    txId?: string
   }
   /** Postal Code */
   postalCode?: string
@@ -79,7 +79,7 @@ export type DynamicQrCodeParams = {
     /** Transaction ID used to identify the payment
      * @default ***
      */
-    txId: string
+    txId?: string
   }
   /** Postal Code */
   postalCode?: string

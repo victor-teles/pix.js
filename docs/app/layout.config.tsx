@@ -9,6 +9,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
  */
 
 export const baseOptions: BaseLayoutProps = {
+  i18n: true,
   nav: {
     title: (
       <>
@@ -21,8 +22,13 @@ export const baseOptions: BaseLayoutProps = {
   links: [
     {
       text: 'Documentation',
-      url: '/docs',
+      url: '/en/docs/getting-started',
       active: 'nested-url',
+    },
+    {
+      text: 'QR Code Generator',
+      url: '/en/docs/pix/generator',
+      active: 'url',
     },
   ],
 }

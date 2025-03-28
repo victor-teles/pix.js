@@ -1,0 +1,27 @@
+---
+title: Validar QR Code
+description: Validadores para payloads de QR Code
+---
+
+Estes métodos irão validar o payload de um QR code PIX:
+
+- Verificar se o CRC é válido
+- Verificar se os campos do payload são válidos
+
+## Função `isValidStaticQrCode`
+
+```ts
+import { isValidStaticQrCode } from "@pix.js/validator";
+
+const isValid = isValidStaticQrCode("00020101021226870014br.gov.bcb.pix0114000000000000000002000000000000005204000053039865802BR5913PIX.JS6009SAO PAULO610805409000620705000000000000006304");
+// isValid será true
+```
+
+## Função `isValidDynamicQrCode`
+
+```ts
+import { isValidDynamicQrCode } from "@pix.js/validator";
+
+const isValid = isValidDynamicQrCode("00020101021226870014br.gov.bcb.pix0114000000000000000002000000000000005204000053039865802BR5913PIX.JS6009SAO PAULO610805409000620705000000000000006304");
+// isValid será true
+```
