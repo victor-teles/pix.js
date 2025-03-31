@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: url('/'),
       changeFrequency: 'monthly',
-      priority: 1,
+      priority: 1.0,
     },
     {
       url: url('/pt/docs/getting-started'),
