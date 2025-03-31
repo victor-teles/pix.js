@@ -14,6 +14,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: url('/pt/docs/getting-started'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: url('/en/docs/getting-started'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: url('/en/docs/pix/generator'),
       changeFrequency: 'monthly',
       priority: 0.8,
