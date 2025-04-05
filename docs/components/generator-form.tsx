@@ -2,7 +2,7 @@
 
 import { createStatic } from '@pix.js/qrcode'
 import { isPixKey } from '@pix.js/validator'
-import { useNumberFormat } from '@react-input/number-format'
+import { unformat, useNumberFormat } from '@react-input/number-format'
 import { useForm } from '@tanstack/react-form'
 import { useState } from 'react'
 import { toast } from 'sonner'
@@ -113,9 +113,11 @@ export function GeneratorForm() {
               <Label htmlFor="amount">Valor</Label>
               <Input
                 defaultValue={state.value}
-                onChange={(e) => handleChange(Number(e.target.value))}
+                onChange={(e) => {
+                  handleChange(Number(unformat(e.target.value, 'pt-BR')))
+                }}
                 onBlur={handleBlur}
-                placeholder="10000"
+                placeholder="R$ 100,00"
                 ref={inputRef}
               />
               {state.meta.errors.length > 0 && <p className="text-red-500">{state.meta.errors[0]}</p>}

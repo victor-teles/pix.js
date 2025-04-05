@@ -55,7 +55,7 @@ const unreservedTemplate = z
 export const staticPixSchema = z
   .object({
     merchantAccountInfo: staticMerchantAccountInfoSchema,
-    value: z.number().positive().min(0).max(13).optional(),
+    value: z.number().positive().optional(),
     merchantCategoryCode: z.string().max(4),
     transactionCurrency: z.string().max(3),
     countryCode: z.string().max(2),
